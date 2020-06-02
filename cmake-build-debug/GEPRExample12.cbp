@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/A1/Documents/GitHub/GEPRExample12/Headers/Arena.h">
+			<Option target="GEPRExample12"/>
+		</Unit>
+		<Unit filename="C:/Users/A1/Documents/GitHub/GEPRExample12/Headers/Fighters.h">
+			<Option target="GEPRExample12"/>
+		</Unit>
 		<Unit filename="C:/Users/A1/Documents/GitHub/GEPRExample12/main.cpp">
 			<Option target="GEPRExample12"/>
 		</Unit>

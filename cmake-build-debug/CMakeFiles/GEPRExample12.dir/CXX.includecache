@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/A1/Documents/GitHub/GEPRExample12/Headers/Arena.h
+Fighters.h
+C:/Users/A1/Documents/GitHub/GEPRExample12/Headers/Fighters.h
+stdlib.h
+-
+
+C:/Users/A1/Documents/GitHub/GEPRExample12/Headers/Fighters.h
+string
+C:/Users/A1/Documents/GitHub/GEPRExample12/Headers/string
+
 C:/Users/A1/Documents/GitHub/GEPRExample12/main.cpp
 iostream
 -
+stdlib.h
+-
+Headers/Fighters.h
+C:/Users/A1/Documents/GitHub/GEPRExample12/Headers/Fighters.h
+Headers/Arena.h
+C:/Users/A1/Documents/GitHub/GEPRExample12/Headers/Arena.h
 
