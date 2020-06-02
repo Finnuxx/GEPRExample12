@@ -22,7 +22,7 @@ int playerMenu() {
 
     cout << "Which fighter do you choose?" << endl;
     cout << "1. Tank - High HP" << endl;
-    cout << "2. Rouge - High block" << endl;
+    cout << "2. Rouge - High attack" << endl;
     cout << "3. Mage - High dodge" << endl;
 
     cin >> input;
