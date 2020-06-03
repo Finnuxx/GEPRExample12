@@ -8,7 +8,7 @@ using namespace std;
 int mainMenu() {
     int input;
 
-    cout << "Welcome to the Fightclub" << endl << "Menu:" << endl;
+    cout << "Menu:" << endl;
     cout << "1. Choose fighter" << endl;
     cout << "2. Exit Game" << endl;
 
@@ -96,6 +96,8 @@ int exitScreen() {
 int main() {
     bool isRunning = true;
 
+    cout << "Welcome to the Fightclub!" << endl;
+
     while (isRunning) {
         int input = mainMenu();
 
@@ -110,13 +112,13 @@ int main() {
             result matchResult = play(arena);
             switch (matchResult) {
                 case winA:
-                    cout << "Congratulations! Player A won the game!" << endl;
+                    cout << "Congratulations! Player A won the game!" << endl << endl;
                     break;
                 case winB:
-                    cout << "Congratulations! Player B won the game!" << endl;
+                    cout << "Congratulations! Player B won the game!" << endl << endl;
                     break;
                 case tied:
-                    cout << "HAHAHA! Both of you failed!" << endl;
+                    cout << "HAHAHA! Both of you failed!" << endl << endl;
                     break;
             }
         } else {
