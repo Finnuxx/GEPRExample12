@@ -10,6 +10,15 @@
 using namespace std;
 
 class Fighter {
+private:
+    void setDefaults() {
+        setName("Fighter");
+        setHealth(100);
+        setAttackAttr(10);
+        setBlockAttr(10);
+        setDodgeAttr(10);
+    }
+
 protected:
     int attackAttr;
     int blockAttr;

@@ -49,6 +49,20 @@ private:
         }
     }
 
+    string getActionName(action playerAction) {
+        switch (playerAction) {
+            case attack:
+                return "attack";
+
+            case block:
+                return "block";
+
+            case dodge:
+                return "dodge";
+
+        }
+    }
+
     void printHP() {
         cout << "Player A - HP " << playerA->getName() << ": " << playerA->getHealth() << endl;
         cout << "Player B - HP " << playerB->getName() << ": " << playerB->getHealth() << endl;
@@ -56,9 +70,9 @@ private:
 
     void applyAction(action actionA, action actionB) {
         int actionValueA = randomNumber() * resolveAction(actionA, playerA);
-        cout << actionA << ": " << actionValueA << endl;
+        cout << getActionName(actionA) << ": " << actionValueA << endl;
         int actionValueB = randomNumber() * resolveAction(actionB, playerB);
-        cout << actionB << ": " << actionValueB << endl;
+        cout << getActionName(actionB) << ": " << actionValueB << endl;
 
         if (actionA == attack && actionB == attack) {
             playerA->takeDamage(actionValueB);

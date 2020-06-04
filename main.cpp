@@ -17,15 +17,18 @@ int mainMenu() {
     return input;
 }
 
-int playerMenu() {
+int playerMenu(string playerName) {
     int input;
 
     cout << "Which fighter do you choose?" << endl;
-    cout << "1. Tank - High HP" << endl;
+    cout << "1. Tank - High block" << endl;
     cout << "2. Rouge - High attack" << endl;
     cout << "3. Mage - High dodge" << endl;
+    cout << "4. Main Menu" << endl;
 
+    cout << playerName << ": ";
     cin >> input;
+    cout << endl;
 
     return input;
 }
@@ -53,6 +56,7 @@ action actionMenu() {
     cout << "3. dodge" << endl;
 
     cin >> input;
+
 
     switch (input) {
         case 1:
@@ -102,8 +106,18 @@ int main() {
         int input = mainMenu();
 
         if (input == 1) {
-            int playerASelection = playerMenu();
-            int playerBSelection = playerMenu();
+            int playerASelection = playerMenu("Player A");
+            if (playerASelection == 4) {
+                input = 0;
+                continue;
+            }
+
+            int playerBSelection = playerMenu("Player B");
+            if (playerBSelection == 4) {
+                input = 0;
+                continue;
+            }
+
             Fighter *fighterA = getPlayerBySelection(playerASelection);
             Fighter *fighterB = getPlayerBySelection(playerBSelection);
 
