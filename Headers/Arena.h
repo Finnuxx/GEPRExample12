@@ -106,21 +106,27 @@ private:
         }
 
         if (actionA == attack && actionB == dodge) {
-            if (playerA->getAttackAttr() > playerB->getDodgeAttr()) {
+            if (actionValueA > actionValueB) {
                 playerB->takeDamage(actionValueA);
                 printHP();
                 return;
             }
+            cout << "nothing happened" << endl;
             return;
         }
 
         if (actionA == dodge && actionB == attack) {
-            if (playerB->getAttackAttr() > playerA->getDodgeAttr()) {
+            if (actionValueB > actionValueA) {
                 playerA->takeDamage(actionValueB);
                 printHP();
                 return;
             }
+            cout << "nothing happened" << endl;
             return;
+        }
+
+        if ((actionA == block || dodge) && (actionB == block || dodge)) {
+            cout << "nothing happened" << endl;
         }
     }
 

@@ -94,7 +94,7 @@ result play(Arena* arena) {
 }
 
 int exitScreen() {
-    cout << "left game" << endl;
+    cout << "See you soon!" << endl;
 }
 
 int main() {
