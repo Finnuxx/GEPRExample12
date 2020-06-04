@@ -69,10 +69,13 @@ private:
     }
 
     void applyAction(action actionA, action actionB) {
-        int actionValueA = randomNumber() * resolveAction(actionA, playerA);
-        cout << getActionName(actionA) << ": " << actionValueA << endl;
-        int actionValueB = randomNumber() * resolveAction(actionB, playerB);
-        cout << getActionName(actionB) << ": " << actionValueB << endl;
+        int luckA = randomNumber();
+        int actionValueA = luckA * resolveAction(actionA, playerA);
+        cout << playerA->getName() << " " << getActionName(actionA) << "s with luck " << luckA << "!" << endl << "Value: " << actionValueA << endl << endl;
+
+        int luckB = randomNumber();
+        int actionValueB = luckB * resolveAction(actionB, playerB);
+        cout << playerB->getName() << " " << getActionName(actionB) << "s with luck " << luckB << "!" << endl << "Value: " << actionValueB << endl << endl;
 
         if (actionA == attack && actionB == attack) {
             playerA->takeDamage(actionValueB);
@@ -111,7 +114,7 @@ private:
                 printHP();
                 return;
             }
-            cout << "nothing happened" << endl;
+            cout << playerB->getName() << " dodged successfully!" << endl;
             return;
         }
 
@@ -121,7 +124,7 @@ private:
                 printHP();
                 return;
             }
-            cout << "nothing happened" << endl;
+            cout << playerA->getName() << " dodged successfully!" << endl;
             return;
         }
 
