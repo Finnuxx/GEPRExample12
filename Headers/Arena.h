@@ -7,14 +7,10 @@
 
 #include "Fighters.h"
 #include <stdlib.h>
+#include "time.h"
 
 using namespace std;
 
-int randomNumber() {
-    int random = rand() % 10;
-
-    return random;
-}
 
 enum action {
     attack = 1,
@@ -69,11 +65,13 @@ private:
     }
 
     void applyAction(action actionA, action actionB) {
-        int luckA = randomNumber();
+        srand((unsigned) time(0));
+
+        int luckA = (rand() % 10);
         int actionValueA = luckA * resolveAction(actionA, playerA);
         cout << playerA->getName() << " " << getActionName(actionA) << "s with luck " << luckA << "!" << endl << "Value: " << actionValueA << endl << endl;
 
-        int luckB = randomNumber();
+        int luckB = (rand() % 10);
         int actionValueB = luckB * resolveAction(actionB, playerB);
         cout << playerB->getName() << " " << getActionName(actionB) << "s with luck " << luckB << "!" << endl << "Value: " << actionValueB << endl << endl;
 
