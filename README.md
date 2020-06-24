@@ -1,6 +1,8 @@
 # GEPRExample12
 ### Inheritance and polymorphism
 
+#### First thoughts:
+
 - screen 1: start fight/exit
 - screen 2: select fighter player 1 and 2
 - screen 3: fighting screen

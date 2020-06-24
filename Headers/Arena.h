@@ -31,7 +31,7 @@ private:
     Fighter* playerA;
     Fighter* playerB;
 
-    int resolveAction(action playerAction, Fighter* player) {
+    int resolveAction(action playerAction, Fighter* player) { //resolves action
         switch (playerAction) {
             case attack:
                 return player->getAttackAttr();
@@ -45,7 +45,7 @@ private:
         }
     }
 
-    string getActionName(action playerAction) {
+    string getActionName(action playerAction) { //converts enum ints to strings
         switch (playerAction) {
             case attack:
                 return "attack";
@@ -59,12 +59,12 @@ private:
         }
     }
 
-    void printHP() {
+    void printHP() { //prints players HP
         cout << "Player A - HP " << playerA->getName() << ": " << playerA->getHealth() << endl;
         cout << "Player B - HP " << playerB->getName() << ": " << playerB->getHealth() << endl;
     }
 
-    void applyAction(action actionA, action actionB) {
+    void applyAction(action actionA, action actionB) { //applies action to fighters -> with luck
         srand((unsigned) time(0));
 
         int luckA = (rand() % 10);
@@ -75,14 +75,14 @@ private:
         int actionValueB = luckB * resolveAction(actionB, playerB);
         cout << playerB->getName() << " " << getActionName(actionB) << "s with luck " << luckB << "!" << endl << "Value: " << actionValueB << endl << endl;
 
-        if (actionA == attack && actionB == attack) {
+        if (actionA == attack && actionB == attack) { //if both attack
             playerA->takeDamage(actionValueB);
             playerB->takeDamage(actionValueA);
             printHP();
             return;
         }
 
-        if (actionA == attack && actionB == block) {
+        if (actionA == attack && actionB == block) { //if A attacks and B blocks
             int damage = actionValueA - actionValueB;
 
             playerB->takeDamage(
@@ -94,7 +94,7 @@ private:
             return;
         }
 
-        if (actionA == block && actionB == attack) {
+        if (actionA == block && actionB == attack) { //if B attacks and A blocks
             int damage = actionValueB - actionValueA;
 
             playerA->takeDamage(
@@ -106,7 +106,7 @@ private:
             return;
         }
 
-        if (actionA == attack && actionB == dodge) {
+        if (actionA == attack && actionB == dodge) { //if A attacks and B tries to dodge
             if (actionValueA > actionValueB) {
                 playerB->takeDamage(actionValueA);
                 printHP();
@@ -116,7 +116,7 @@ private:
             return;
         }
 
-        if (actionA == dodge && actionB == attack) {
+        if (actionA == dodge && actionB == attack) { //if B attacks and A tries to dodge
             if (actionValueB > actionValueA) {
                 playerA->takeDamage(actionValueB);
                 printHP();
@@ -126,7 +126,7 @@ private:
             return;
         }
 
-        if ((actionA == block || dodge) && (actionB == block || dodge)) {
+        if ((actionA == block || dodge) && (actionB == block || dodge)) { //if A blocks or tries to dodge and B blocks and tries to dodge
             cout << "nothing happened" << endl;
         }
     }
@@ -137,7 +137,7 @@ public:
         this->playerB = playerB;
     }
 
-    result engage(action actionA, action actionB) {
+    result engage(action actionA, action actionB) { //resolves which player has won the game
         this->applyAction(actionA, actionB);
 
         if (playerA->getHealth() > 0 && playerB->getHealth() == 0) {

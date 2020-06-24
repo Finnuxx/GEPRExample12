@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int mainMenu() {
+int mainMenu() { //shows welcome screen and handles input
     int input;
 
     cout << "Menu:" << endl;
@@ -17,7 +17,7 @@ int mainMenu() {
     return input;
 }
 
-int playerMenu(string playerName) {
+int playerMenu(string playerName) { //shows player select screen and handles input
     int input;
 
     cout << "Which fighter do you choose?" << endl;
@@ -33,7 +33,7 @@ int playerMenu(string playerName) {
     return input;
 }
 
-Fighter* getPlayerBySelection(int selection) {
+Fighter* getPlayerBySelection(int selection) { //handles fighter selection input
     switch (selection) {
         case 1:
             return new Tank();
@@ -48,7 +48,7 @@ Fighter* getPlayerBySelection(int selection) {
 
 
 
-action actionMenu() {
+action actionMenu() { //handles action input
     int input;
 
     cout << "1. attack" << endl;
@@ -70,7 +70,7 @@ action actionMenu() {
     }
 }
 
-action getValidAction() {
+action getValidAction() { //validates action
     while (true) {
         action a = actionMenu();
         if (invalid != a) {

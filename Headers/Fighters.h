@@ -11,7 +11,7 @@ using namespace std;
 
 class Fighter {
 private:
-    void setDefaults() {
+    void setDefaults() { //sets default values
         setName("Fighter");
         setHealth(100);
         setAttackAttr(10);
@@ -29,7 +29,7 @@ protected:
 
 public:
 
-    void takeDamage(int damage) {
+    void takeDamage(int damage) { //calculates HP
         int tmpHealth = health - damage;
         if (tmpHealth <= 0) {
             health = 0;
@@ -80,7 +80,7 @@ public:
     }
 };
 
-class Tank: public Fighter {
+class Tank: public Fighter { //sets tanks default values
 public:
     Tank() {
         setDefaults();
@@ -101,7 +101,7 @@ private:
     }
 };
 
-class Rouge: public Fighter {
+class Rouge: public Fighter { //sets rouges default values
 public:
     Rouge() {
         setDefaults();
@@ -123,7 +123,7 @@ private:
     }
 };
 
-class Mage: public Fighter {
+class Mage: public Fighter { //sets mages default values
 public:
     Mage() {
         setDefaults();
